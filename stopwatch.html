@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Challenge: Stopwatch</title>
+</head>
+
+<body>
+
+    <button id="stop-button" type="button">Stop</button>
+    <p>
+        <span id="seconds">0</span> seconds have gone by!
+    </p>
+    <script>
+
+        var secondsElement = document.getElementById("seconds");
+        var countUpInterval;
+
+        // Make it count up on a timer, calling this function
+        var countUp = function () {
+            var currentSeconds = parseInt(secondsElement.innerText);
+            secondsElement.innerText = currentSeconds + 1;
+        };
+
+        // Start counting up when the page loads
+        countUpInterval = setInterval(countUp, 1000);
+
+        // How can you make it stop counting?
+        var stopCountUp = function () {
+            clearInterval(countUpInterval);
+        };
+
+        var stopButton = document.getElementById("stop-button");
+        stopButton.addEventListener("click", stopCountUp);
+    </script>
+</body>
+
+</html>

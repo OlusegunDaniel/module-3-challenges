@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Challenge: Mad Libs</title>
+ </head>
+ <body>
+ 
+    <h1>Mad Libs</h1>
+     
+    <ul>
+      <li>Noun: <input type="text" id="noun"></li>
+      <li>Adjective: <input type="text" id="adjective"></li>
+      <li>Someone's Name: <input type="text" id="person"></li>
+    </ul>
+     
+    <button id="lib-button">Lib it!</button>
+      
+    <p>Generated story: 
+    <span id="story"></span>
+    </p>
+ 
+    <script>
+       
+        
+
+        var libButton = document.getElementById('lib-button');
+        var libIt = function() {
+            var nounValue = document.getElementById("noun").value;
+            var adjectiveValue = document.getElementById("adjective").value;
+            var personValue = document.getElementById("someone's name").value;
+
+            var storyDiv = document.getElementById("story");
+            storyDiv.innerHTML = "Once upon a time, there was a " + adjectiveValue + " " + nounValue + ". This " + nounValue + " met " + personValue + " and they lived happily ever after.";
+        };
+        libButton.addEventListener('click', libIt);
+    </script>
+  
+ </body>
+</html>
